@@ -17,7 +17,7 @@ public class TestForStudentRegistrationForm {
     }
 
     @Test
-    void FillStudentRegistrationForm() {
+    void fillStudentRegistrationForm() {
         open("/automation-practice-form");
 
 
@@ -32,10 +32,8 @@ public class TestForStudentRegistrationForm {
         $("#userNumber").setValue("8900000000");
 
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").click();
-        $(byText("October")).click();
-        $(".react-datepicker__year-select").click();
-        $(byText("2010")).click();
+        $(".react-datepicker__month-select").selectOption("October");
+        $(".react-datepicker__year-select").selectOption("2010");
         $(".react-datepicker__day react-datepicker__day--019");
         $(byText("19")).click();
 
@@ -47,7 +45,7 @@ public class TestForStudentRegistrationForm {
 
         $("#currentAddress").setValue("Lenina 51");
 
-        $("#state").click();
+        $("#state").scrollTo().click();
         $(byText("Haryana")).click();
         $("#city").click();
         $(byText("Panipat")).click();
@@ -65,5 +63,7 @@ public class TestForStudentRegistrationForm {
         $x("//td[text()='Picture']").parent().shouldHave(text("screenshot.png"));
         $x("//td[text()='Address']").parent().shouldHave(text("Lenina 51"));
         $x("//td[text()='State and City']").parent().shouldHave(text("Haryana Panipat"));
+
+        sleep(50000);
     }
 }
