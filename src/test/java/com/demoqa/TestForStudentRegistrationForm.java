@@ -62,8 +62,5 @@ public class TestForStudentRegistrationForm {
         $x("//td[text()='Picture']").parent().shouldHave(text("screenshot.png"));
         $x("//td[text()='Address']").parent().shouldHave(text("Lenina 51"));
         $x("//td[text()='State and City']").parent().shouldHave(text("Haryana Panipat"));
-
-        sleep(50000);
     }
-
 }
