@@ -49,7 +49,7 @@ public class TestForStudentRegistrationForm {
         $("#city").click();
         $(byText("Panipat")).click();
 
-        $("#submit").click();
+        $("#state").scrollTo().click();
 
 
         $x("//td[text()='Student Name']").parent().shouldHave(text("Ivan"));
